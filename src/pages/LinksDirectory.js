@@ -1,12 +1,12 @@
 import React, { useState, useEffect } from "react";
 import { Tabs, Tab, ListGroup, Button } from "react-bootstrap";
 import Loader from "../components/Loader";
-import { ViewIcon } from "../components/Icons";
+// import { ViewIcon } from "../components/Icons";
 import Dialog from "../components/Dialog";
 import API_URL from "../api";
 
 const LinksDirectory = (props) => {
-    const { user } = props;
+    // const { user } = props;
     const [key, setKey] = useState("getAllUrls");
 
     const [showDialog, setShowDialog] = useState(false);
@@ -44,6 +44,7 @@ const LinksDirectory = (props) => {
 
     useEffect(() => {
         handleTabSelect(key);
+        // eslint-disable-next-line react-hooks/exhaustive-deps
     }, []);
 
     return (

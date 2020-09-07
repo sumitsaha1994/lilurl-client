@@ -46,6 +46,7 @@ const ResetPassword = () => {
             .catch((error) => {
                 setValidateError("Something went wrong. Please try again");
             });
+        // eslint-disable-next-line react-hooks/exhaustive-deps
     }, []);
 
     const handleInputChange = (e) => {

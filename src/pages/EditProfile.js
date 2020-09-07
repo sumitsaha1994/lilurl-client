@@ -108,6 +108,7 @@ function EditProfile(props) {
                 }
                 setDataLoading(false);
             });
+        // eslint-disable-next-line react-hooks/exhaustive-deps
     }, []);
 
     return (

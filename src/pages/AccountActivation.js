@@ -35,6 +35,7 @@ const AccountActivation = () => {
             .catch((error) => {
                 setMessage("Something went wrong. Please try again");
             });
+        // eslint-disable-next-line react-hooks/exhaustive-deps
     }, []);
 
     return (

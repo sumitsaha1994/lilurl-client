@@ -1,10 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { useHistory, Link } from "react-router-dom";
-import NavBar from "../components/NavBar";
-import { Button, Form, Row, Col, Container, Modal } from "react-bootstrap";
+import { Button, Form, Row, Col, Modal } from "react-bootstrap";
 import SubmitButton from "../components/SubmitButton";
-import Chart from "chart.js";
-import moment from "moment";
 import { Line } from "react-chartjs-2";
 import Loader from "../components/Loader";
 import API_URL from "../api";
@@ -52,6 +49,7 @@ const Dashboard = (props) => {
             .catch((error) => {
                 setIsLoadFailed(false);
             });
+        // eslint-disable-next-line react-hooks/exhaustive-deps
     }, []);
     const chart = () => {
         setChartState({ ...chartState, loading: true, error: false });
@@ -72,7 +70,6 @@ const Dashboard = (props) => {
         fetch(`${API_URL}/url/getUrlCountLastFiveMonths`, {
             method: "GET",
             credentials: "include",
-            mode: "cors",
         })
             .then((res) => res.json())
             .then((data) => {
@@ -104,7 +101,6 @@ const Dashboard = (props) => {
         fetch(`${API_URL}/url/getUrlCountLastSevenDays`, {
             method: "GET",
             credentials: "include",
-            mode: "cors",
         })
             .then((res) => res.json())
             .then((data) => {
@@ -136,6 +132,7 @@ const Dashboard = (props) => {
 
     useEffect(() => {
         chart();
+        // eslint-disable-next-line react-hooks/exhaustive-deps
     }, []);
 
     const handleInputChange = (e) => {
@@ -149,7 +146,6 @@ const Dashboard = (props) => {
         fetch(`${API_URL}/url/addUrl`, {
             method: "POST",
             credentials: "include",
-            mode: "cors",
             headers: {
                 "Content-Type": "application/json",
             },
