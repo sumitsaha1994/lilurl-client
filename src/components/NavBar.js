@@ -41,6 +41,9 @@ const NavBar = (props) => {
                         </Dropdown.Toggle>
 
                         <Dropdown.Menu style={{ left: "auto", right: "0px" }}>
+                            <Dropdown.Item as={Link} to="/user/dashboard">
+                                Dashboard
+                            </Dropdown.Item>
                             <Dropdown.Item as={Link} to="/user/editProfile">
                                 Edit profile
                             </Dropdown.Item>
