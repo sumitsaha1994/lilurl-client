@@ -1,12 +1,13 @@
 import React from "react";
 import { Navbar, Dropdown, Button } from "react-bootstrap";
 import { Link, useHistory } from "react-router-dom";
+import API_URL from "../api";
 
 const NavBar = (props) => {
     const { user } = props;
     const history = useHistory();
     const handleLogout = () => {
-        fetch("/users/logout")
+        fetch(`${API_URL}/users/logout`)
             .then((res) => res.json())
             .then((data) => history.push("/user/login"));
     };

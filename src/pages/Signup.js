@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { Form, Button, Container } from "react-bootstrap";
 import { Link } from "react-router-dom";
 import SubmitButton from "../components/SubmitButton";
+import API_URL from "../api";
 
 const Signup = () => {
     const [state, setState] = useState({
@@ -22,7 +23,7 @@ const Signup = () => {
     const handleSubmit = (e) => {
         e.preventDefault();
         setIsLoading(true);
-        fetch("/users/signup", {
+        fetch(`${API_URL}/users/signup`, {
             method: "POST",
             headers: {
                 "Content-Type": "application/json",

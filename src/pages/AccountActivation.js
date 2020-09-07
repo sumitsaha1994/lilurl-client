@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { useParams, useHistory, Link } from "react-router-dom";
 import { Container } from "react-bootstrap";
+import API_URL from "../api";
 
 const AccountActivation = () => {
     const { token: urlToken } = useParams();
@@ -8,7 +9,7 @@ const AccountActivation = () => {
     const [message, setMessage] = useState("");
     useEffect(() => {
         //console.log(urlToken);
-        fetch("/users/verifyEmailActivation", {
+        fetch(`${API_URL}/users/verifyEmailActivation`, {
             method: "POST",
             headers: {
                 "Content-Type": "application/json",

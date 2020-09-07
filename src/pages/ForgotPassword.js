@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { Form } from "react-bootstrap";
 import SubmitButton from "../components/SubmitButton";
+import API_URL from "../api";
 
 const ForgotPassword = () => {
     const [isLoading, setIsLoading] = useState(false);
@@ -13,7 +14,7 @@ const ForgotPassword = () => {
         setIsLoading(true);
         setDataErrors({});
         setError("");
-        fetch("/users/sendForgotPasswordEmail", {
+        fetch(`${API_URL}/users/sendForgotPasswordEmail`, {
             method: "POST",
             headers: {
                 "Content-Type": "application/json",

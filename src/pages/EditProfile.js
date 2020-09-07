@@ -4,6 +4,7 @@ import SubmitButton from "../components/SubmitButton";
 import Loader from "../components/Loader";
 import AppToast from "../components/AppToast";
 import { useHistory } from "react-router-dom";
+import API_URL from "../api";
 
 function EditProfile(props) {
     const history = useHistory();
@@ -31,7 +32,7 @@ function EditProfile(props) {
         e.preventDefault();
         setIsSubmitLoading(false);
         setErrors({});
-        fetch("/users/updateProfileDetails", {
+        fetch(`${API_URL}/users/updateProfileDetails`, {
             method: "PUT",
             headers: {
                 "Content-Type": "application/json",
@@ -85,7 +86,7 @@ function EditProfile(props) {
 
     useEffect(() => {
         setDataLoading(true);
-        fetch("/users/getUser")
+        fetch(`${API_URL}/users/getUser`)
             .then((res) => res.json())
             .then((data) => {
                 if (data.statusCode === 200) {

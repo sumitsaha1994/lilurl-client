@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { Route, Redirect } from "react-router-dom";
+import API_URL from "../api";
 
 const AuthRoute = ({ component: Component, setUser, user, ...rest }) => {
     const [isAuthorized, setAuthorized] = useState(false);
@@ -7,7 +8,7 @@ const AuthRoute = ({ component: Component, setUser, user, ...rest }) => {
     // const [user, setUser] = useState({});
     useEffect(() => {
         setLoading(true);
-        fetch("/users/getUser")
+        fetch(`${API_URL}/users/getUser`)
             .then((res) => res.json())
             .then((data) => {
                 if (data.statusCode === 200) {

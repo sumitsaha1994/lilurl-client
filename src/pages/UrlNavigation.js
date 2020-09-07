@@ -1,11 +1,12 @@
 import React, { useEffect } from "react";
 import { useParams, useHistory } from "react-router-dom";
+import API_URL from "../api";
 
 const UrlNavigation = () => {
     const { urlToken } = useParams();
     const history = useHistory();
     useEffect(() => {
-        fetch(`/url/getMainUrlByShortUrl/${urlToken}`)
+        fetch(`${API_URL}/url/getMainUrlByShortUrl/${urlToken}`)
             .then((res) => res.json())
             .then((data) => {
                 if (data.statusCode === 200) {

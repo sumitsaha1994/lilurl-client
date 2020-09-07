@@ -7,6 +7,7 @@ import Chart from "chart.js";
 import moment from "moment";
 import { Line } from "react-chartjs-2";
 import Loader from "../components/Loader";
+import API_URL from "../api";
 
 const Dashboard = (props) => {
     const history = useHistory();
@@ -32,7 +33,7 @@ const Dashboard = (props) => {
         urlBox: { margin: "0" },
     };
     useEffect(() => {
-        fetch("/users/getUserActiveStatus")
+        fetch(`${API_URL}/users/getUserActiveStatus`)
             .then((res) => res.json())
             .then((data) => {
                 if (data.statusCode === 200) {
@@ -65,7 +66,7 @@ const Dashboard = (props) => {
             "Nov",
             "Dec",
         ];
-        fetch("/url/getUrlCountLastFiveMonths")
+        fetch(`${API_URL}/url/getUrlCountLastFiveMonths`)
             .then((res) => res.json())
             .then((data) => {
                 if (data.statusCode === 200) {
@@ -93,7 +94,7 @@ const Dashboard = (props) => {
                 setChartState({ ...chartState, loading: false, error: true });
             });
 
-        fetch("/url/getUrlCountLastSevenDays")
+        fetch(`${API_URL}/url/getUrlCountLastSevenDays`)
             .then((res) => res.json())
             .then((data) => {
                 if (data.statusCode === 200) {
@@ -134,7 +135,7 @@ const Dashboard = (props) => {
         setError("");
         setShortUrl("");
         setModalShow(false);
-        fetch("/url/addUrl", {
+        fetch(`${API_URL}/url/addUrl`, {
             method: "POST",
             headers: {
                 "Content-Type": "application/json",

@@ -3,6 +3,7 @@ import React, { useState } from "react";
 import SubmitButton from "../components/SubmitButton";
 import AppToast from "../components/AppToast";
 import { useHistory } from "react-router-dom";
+import API_URL from "../api";
 
 const ActivateAccount = (props) => {
     const history = useHistory();
@@ -16,7 +17,7 @@ const ActivateAccount = (props) => {
     });
     const handleActivate = () => {
         setIsLoading(true);
-        fetch("/users/sendActivationEmail", {
+        fetch(`${API_URL}/users/sendActivationEmail`, {
             method: "POST",
             headers: {
                 "Content-Type": "application/json",

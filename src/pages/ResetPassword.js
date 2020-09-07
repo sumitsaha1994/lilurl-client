@@ -3,6 +3,7 @@ import { useParams, Link } from "react-router-dom";
 import Loader from "../components/Loader";
 import { Form } from "react-bootstrap";
 import SubmitButton from "../components/SubmitButton";
+import API_URL from "../api";
 
 const ResetPassword = () => {
     const { token: urlToken } = useParams();
@@ -21,7 +22,7 @@ const ResetPassword = () => {
     const [resetError, setResetError] = useState("");
     useEffect(() => {
         setvalidationLoading(true);
-        fetch("/users/verifyPasswordResetLink", {
+        fetch(`${API_URL}/users/verifyPasswordResetLink`, {
             method: "POST",
             headers: {
                 "Content-Type": "application/json",
@@ -56,7 +57,7 @@ const ResetPassword = () => {
         setResetLoading(true);
         setResetDataErrors({});
         setResetError("");
-        fetch("/users/updatePassword", {
+        fetch(`${API_URL}/users/updatePassword`, {
             method: "PUT",
             headers: {
                 "Content-Type": "application/json",

@@ -3,6 +3,7 @@ import { Tabs, Tab, ListGroup, Button } from "react-bootstrap";
 import Loader from "../components/Loader";
 import { ViewIcon } from "../components/Icons";
 import Dialog from "../components/Dialog";
+import API_URL from "../api";
 
 const LinksDirectory = (props) => {
     const { user } = props;
@@ -16,7 +17,7 @@ const LinksDirectory = (props) => {
         setKey(k);
         console.log(urlState);
         setUrlState({ ...urlState, loading: true });
-        fetch(`/url/${k}`)
+        fetch(`${API_URL}/url/${k}`)
             .then((res) => res.json())
             .then((data) => {
                 if (data.statusCode === 200) {
