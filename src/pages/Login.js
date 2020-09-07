@@ -34,6 +34,7 @@ const Login = () => {
             })
             .catch((error) => {
                 setErrors({ login: "Something went wrong. Please try again" });
+                setIsLoading(false);
             });
     };
 
