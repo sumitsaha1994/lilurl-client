@@ -218,7 +218,7 @@ const Dashboard = (props) => {
                                 This is your short url{" "}
                                 <a
                                     href={`/${shortUrl}`}
-                                >{`https://lilurl.netlify.app/{shortUrl}`}</a>
+                                >{`https://lilurl.netlify.app/${shortUrl}`}</a>
                             </Modal.Body>
                             <Modal.Footer>
                                 <Button variant="secondary" onClick={handleModalClose}>
