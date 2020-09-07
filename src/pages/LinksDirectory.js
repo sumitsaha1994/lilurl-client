@@ -62,7 +62,7 @@ const LinksDirectory = (props) => {
                         ) : urlState.getAllUrls.length ? (
                             urlState.getAllUrls.map((url) => (
                                 <ListGroup.Item key={url.id} style={{ display: "flex" }}>
-                                    <p className="mr-auto">{url.short_url}</p>
+                                    <p className="mr-auto">{`https://lilurl.netlify.app/{url.short_url}`}</p>
                                     <Button onClick={() => handleDelailsOpen(url.id, key)}>
                                         Details
                                     </Button>
@@ -80,7 +80,7 @@ const LinksDirectory = (props) => {
                         ) : urlState.getAliasUrls.length ? (
                             urlState.getAliasUrls.map((url) => (
                                 <ListGroup.Item key={url.id} style={{ display: "flex" }}>
-                                    <p className="mr-auto">{url.short_url}</p>
+                                    <p className="mr-auto">{`https://lilurl.netlify.app/{url.short_url}`}</p>
                                     <Button onClick={() => handleDelailsOpen(url.id, key)}>
                                         Details
                                     </Button>
