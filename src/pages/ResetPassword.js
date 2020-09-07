@@ -88,7 +88,7 @@ const ResetPassword = () => {
             });
     };
     return (
-        <div style={{ width: "30%", margin: "auto" }}>
+        <div style={{ width: "20rem", margin: "auto" }}>
             {validationLoading ? (
                 <p>
                     <Loader size="sm" variant="primary" text="Verifying reset password request" />
