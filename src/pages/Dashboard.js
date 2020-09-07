@@ -33,7 +33,10 @@ const Dashboard = (props) => {
         urlBox: { margin: "0" },
     };
     useEffect(() => {
-        fetch(`${API_URL}/users/getUserActiveStatus`)
+        fetch(`${API_URL}/users/getUserActiveStatus`, {
+            method: "GET",
+            credentials: "include",
+        })
             .then((res) => res.json())
             .then((data) => {
                 if (data.statusCode === 200) {
@@ -66,7 +69,11 @@ const Dashboard = (props) => {
             "Nov",
             "Dec",
         ];
-        fetch(`${API_URL}/url/getUrlCountLastFiveMonths`)
+        fetch(`${API_URL}/url/getUrlCountLastFiveMonths`, {
+            method: "GET",
+            credentials: "include",
+            mode: "cors",
+        })
             .then((res) => res.json())
             .then((data) => {
                 if (data.statusCode === 200) {
@@ -94,7 +101,11 @@ const Dashboard = (props) => {
                 setChartState({ ...chartState, loading: false, error: true });
             });
 
-        fetch(`${API_URL}/url/getUrlCountLastSevenDays`)
+        fetch(`${API_URL}/url/getUrlCountLastSevenDays`, {
+            method: "GET",
+            credentials: "include",
+            mode: "cors",
+        })
             .then((res) => res.json())
             .then((data) => {
                 if (data.statusCode === 200) {
@@ -137,6 +148,8 @@ const Dashboard = (props) => {
         setModalShow(false);
         fetch(`${API_URL}/url/addUrl`, {
             method: "POST",
+            credentials: "include",
+            mode: "cors",
             headers: {
                 "Content-Type": "application/json",
             },

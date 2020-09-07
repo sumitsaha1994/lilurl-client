@@ -8,7 +8,10 @@ const AuthRoute = ({ component: Component, setUser, user, ...rest }) => {
     // const [user, setUser] = useState({});
     useEffect(() => {
         setLoading(true);
-        fetch(`${API_URL}/users/getUser`)
+        fetch(`${API_URL}/users/getUser`, {
+            method: "GET",
+            credentials: "include",
+        })
             .then((res) => res.json())
             .then((data) => {
                 if (data.statusCode === 200) {

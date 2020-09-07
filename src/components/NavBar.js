@@ -7,7 +7,10 @@ const NavBar = (props) => {
     const { user } = props;
     const history = useHistory();
     const handleLogout = () => {
-        fetch(`${API_URL}/users/logout`)
+        fetch(`${API_URL}/users/logout`, {
+            method: "GET",
+            credentials: "include",
+        })
             .then((res) => res.json())
             .then((data) => history.push("/user/login"));
     };

@@ -17,7 +17,10 @@ const LinksDirectory = (props) => {
         setKey(k);
         console.log(urlState);
         setUrlState({ ...urlState, loading: true });
-        fetch(`${API_URL}/url/${k}`)
+        fetch(`${API_URL}/url/${k}`, {
+            method: "GET",
+            credentials: "include",
+        })
             .then((res) => res.json())
             .then((data) => {
                 if (data.statusCode === 200) {

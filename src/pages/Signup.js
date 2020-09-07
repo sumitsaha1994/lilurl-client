@@ -25,6 +25,7 @@ const Signup = () => {
         setIsLoading(true);
         fetch(`${API_URL}/users/signup`, {
             method: "POST",
+            credentials: "include",
             headers: {
                 "Content-Type": "application/json",
             },

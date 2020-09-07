@@ -16,6 +16,7 @@ const ForgotPassword = () => {
         setError("");
         fetch(`${API_URL}/users/sendForgotPasswordEmail`, {
             method: "POST",
+            credentials: "include",
             headers: {
                 "Content-Type": "application/json",
             },

@@ -24,6 +24,7 @@ const ResetPassword = () => {
         setvalidationLoading(true);
         fetch(`${API_URL}/users/verifyPasswordResetLink`, {
             method: "POST",
+            credentials: "include",
             headers: {
                 "Content-Type": "application/json",
             },
@@ -59,6 +60,8 @@ const ResetPassword = () => {
         setResetError("");
         fetch(`${API_URL}/users/updatePassword`, {
             method: "PUT",
+            credentials: "include",
+            mode: "cors",
             headers: {
                 "Content-Type": "application/json",
             },

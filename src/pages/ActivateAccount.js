@@ -19,6 +19,7 @@ const ActivateAccount = (props) => {
         setIsLoading(true);
         fetch(`${API_URL}/users/sendActivationEmail`, {
             method: "POST",
+            credentials: "include",
             headers: {
                 "Content-Type": "application/json",
             },

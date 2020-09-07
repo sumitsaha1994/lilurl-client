@@ -11,6 +11,7 @@ const AccountActivation = () => {
         //console.log(urlToken);
         fetch(`${API_URL}/users/verifyEmailActivation`, {
             method: "POST",
+            credentials: "include",
             headers: {
                 "Content-Type": "application/json",
             },

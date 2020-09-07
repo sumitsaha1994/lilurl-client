@@ -34,6 +34,8 @@ function EditProfile(props) {
         setErrors({});
         fetch(`${API_URL}/users/updateProfileDetails`, {
             method: "PUT",
+            credentials: "include",
+
             headers: {
                 "Content-Type": "application/json",
             },
@@ -86,7 +88,10 @@ function EditProfile(props) {
 
     useEffect(() => {
         setDataLoading(true);
-        fetch(`${API_URL}/users/getUser`)
+        fetch(`${API_URL}/users/getUser`, {
+            method: "GET",
+            credentials: "include",
+        })
             .then((res) => res.json())
             .then((data) => {
                 if (data.statusCode === 200) {
