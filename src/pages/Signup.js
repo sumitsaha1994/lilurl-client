@@ -59,8 +59,8 @@ const Signup = () => {
                     </p>
                 </Container>
             ) : (
-                <div>
-                    <Form onSubmit={handleSubmit} style={{ width: "30%", margin: "auto" }}>
+                <div style={{ width: "20rem", margin: "auto" }}>
+                    <Form onSubmit={handleSubmit}>
                         <h1>Sign up</h1>
                         <Form.Text className="text-danger">{errors.signup}</Form.Text>
                         <Form.Group controlId="formBasicEmail">
