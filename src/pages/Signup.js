@@ -74,7 +74,7 @@ const Signup = () => {
                         </Form.Group>
                         <Form.Group controlId="formBasicPassword">
                             <Form.Control
-                                type="pasword"
+                                type="password"
                                 name="password"
                                 placeholder="Enter password"
                                 onChange={handleInputChange}
@@ -83,7 +83,7 @@ const Signup = () => {
                         </Form.Group>
                         <Form.Group controlId="formBasicConfirmPassword">
                             <Form.Control
-                                type="pasword"
+                                type="password"
                                 name="confirmPassword"
                                 placeholder="Re enter password"
                                 onChange={handleInputChange}
