@@ -40,6 +40,7 @@ const LinksDirectory = (props) => {
 
     useEffect(() => {
         handleTabSelect(key);
+        // eslint-disable-next-line react-hooks/exhaustive-deps
     }, []);
 
     return (
@@ -57,7 +58,14 @@ const LinksDirectory = (props) => {
                         ) : urlState.getAllUrls.length ? (
                             urlState.getAllUrls.map((url) => (
                                 <ListGroup.Item key={url.id} style={{ display: "flex" }}>
-                                    <p className="mr-auto">{url.short_url}</p>
+                                    <a
+                                        href={`https://${window.location.hostname}/${url.short_url}`}
+                                        target="_blank"
+                                        rel="noopener noreferrer"
+                                        className="mr-auto"
+                                    >
+                                        {`https://${window.location.hostname}/${url.short_url}`}
+                                    </a>
                                     <Button onClick={() => handleDelailsOpen(url.id, key)}>
                                         Details
                                     </Button>
@@ -75,7 +83,12 @@ const LinksDirectory = (props) => {
                         ) : urlState.getAliasUrls.length ? (
                             urlState.getAliasUrls.map((url) => (
                                 <ListGroup.Item key={url.id} style={{ display: "flex" }}>
-                                    <p className="mr-auto">{url.short_url}</p>
+                                    <p
+                                        href={`https://${window.location.hostname}/${url.short_url}`}
+                                        className="mr-auto"
+                                        target="_blank"
+                                        rel="noopener noreferrer"
+                                    >{`https://${window.location.hostname}/${url.short_url}`}</p>
                                     <Button onClick={() => handleDelailsOpen(url.id, key)}>
                                         Details
                                     </Button>
