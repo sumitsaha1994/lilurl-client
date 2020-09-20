@@ -26,7 +26,7 @@ const Dialog = ({ text, show, setShow }) => {
                                 <strong>Short-URL</strong>
                             </Col>
                             <Col xs={12} md={8}>
-                                <small>{text.short_url}</small>
+                                <small>{`https://${window.location.hostname}/${text.short_url}`}</small>
                             </Col>
                         </Row>
                         <Row className="mb-3">
