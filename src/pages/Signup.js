@@ -91,6 +91,11 @@ const Signup = () => {
                             <Form.Text className="text-danger">{errors.confirmPassword}</Form.Text>
                         </Form.Group>
                         <SubmitButton isLoading={isLoading} buttonText="Sign up" block />
+                        <Form.Text>
+                            <p>
+                                Go back to <Link to="/user/login">Login page</Link>
+                            </p>
+                        </Form.Text>
                     </Form>
                 </div>
             )}
